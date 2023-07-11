@@ -7,10 +7,10 @@ const About = () => {
                 <h3 className="fw-bold mt-3">I'M AVAILABLE FOR WEBAPP DEVELOPEMENT PROJECTS</h3>
                 <p className="my-4">Born in 2003, living in Pakistan. I provide Interactive and Responsive Websites, designs & Web Applications, as well as front-end implementation. I will continue to pursue a wide range of expressions and better code by pursuing our “likes”.</p>
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-md-6 col-sm-6">
+                    <div className="col-md-6">
                         <p><span className="fs-1">5k </span>Projects Completed.</p>
                     </div>
-                    <div className="col-md-6 col-sm-6">
+                    <div className="col-md-6">
                         <p><span className="fs-1">3k </span>Satisfied Client.</p>
                     </div>
                 </div>

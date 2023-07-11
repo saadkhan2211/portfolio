@@ -2,9 +2,9 @@ import blue from '../assets/blue.jpg';
 
 const Skills = () => {
     return(
-        <div className="row justify-content-center align-items-center my-5"  id='Skills'>
-            <div className="col-md-6">
-                <div data-aos="fade-right">
+        <div data-aos="fade-down">
+            <div className="row justify-content-center align-items-center my-5"  id='Skills'>
+                <div className="col-md-6">
                     <h6 className="mt-2 mb-4"><i className="bi bi-circle-fill" style={{color: "#3498db"}}></i>&nbsp; Skills</h6>
                     <label>HTML/CSS</label>
                     <div className="progress my-3 bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
@@ -23,9 +23,7 @@ const Skills = () => {
                         <div className="progress-bar bg-blue" style={{width: "90%"}}>90%</div>
                     </div>
                 </div>
-            </div>
-            <div className="col-md-6">
-                <div data-aos="fade-left">
+                <div className="col-md-6">
                     <h6 className="my-4"><i className="bi bi-circle-fill" style={{color: "#3498db"}}></i>&nbsp; TESTIMONIALS</h6>
                     <div id="carouselExampleIndicators" className="carousel slide">
                         <div className="carousel-indicators">
