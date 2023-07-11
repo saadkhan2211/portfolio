@@ -9,12 +9,12 @@ const NavBar = () => {
             <header>
                 <nav className="navbar navbar-expand-lg py-3" style={{backgroundColor: "#212121"}}>
                     <div className="container-fluid">
-                        <a className="navbar-brand ms-5 fs-3 handFont" href="#">{title}</a>
+                        <a className="navbar-brand ms-3 fs-3 handFont" href="#">{title}</a>
                         <button className="navbar-toggler" style={{borderColor: "#3498db"}} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon" style={{color: "#ECF0F1"}}></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav ms-auto me-5 mb-2 mb-lg-0 text-center">
+                            <ul className="navbar-nav ms-auto me-4 mb-2 mb-lg-0 text-center">
                                 <li className="nav-item mx-2">
                                     <Link to="Home" className="nav-link navFont" smooth={true} offset={-100} duration={500}>Home</Link>
                                 </li>
