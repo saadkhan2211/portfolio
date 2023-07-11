@@ -28,7 +28,7 @@ const NavBar = () => {
                                     <Link to="Portfolio" className="nav-link navFont" smooth={true} offset={-100} duration={500}>Portfolio</Link>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link to="Contact" className="nav-link navFont" smooth={true} offset={0} duration={500}>Contact</Link>
+                                    <Link to="Contact" className="nav-link navFont" smooth={true} offset={-120} duration={500}>Contact</Link>
                                 </li>
                             </ul>
                         </div>
