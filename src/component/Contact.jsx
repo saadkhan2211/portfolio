@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Contact = () => {
     return(
         <div>
@@ -6,19 +8,19 @@ const Contact = () => {
                 <div className="card border-secondary border-2 mb-3 container bg-transparent" id='Contact'>
                     <div className="row justifuy-content-center align-items-center text-white my-3">
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover ">
-                            <a className="nav-link"><i className="bi bi-whatsapp"></i>&nbsp; +923312619428</a>
+                            <a className="nav-link" target="_blank"><i className="bi bi-whatsapp"></i>&nbsp; +923312619428</a>
                         </div>
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover">
-                            <a className="nav-link" href="https://github.com/saadkhan2211"><i className="bi bi-github"></i>&nbsp; GitHub</a>
+                            <a className="nav-link" target="_blank" href="https://github.com/saadkhan2211"><i className="bi bi-github"></i>&nbsp; GitHub</a>
                         </div>
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover">
-                            <a className="nav-link" href="https://www.linkedin.com/in/saad-saifullah"><i className="bi bi-linkedin"></i>&nbsp; Linkedin</a>
+                            <a className="nav-link" target="_blank" href="https://www.linkedin.com/in/saad-saifullah"><i className="bi bi-linkedin"></i>&nbsp; Linkedin</a>
                         </div>
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover">
-                            <a className="nav-link" href="https://www.instagram.com/saadsaifullah.khan/"><i className="bi bi-instagram"></i>&nbsp; Instagram</a>
+                            <a className="nav-link" target="_blank" href="https://www.instagram.com/saadsaifullah.khan/"><i className="bi bi-instagram"></i>&nbsp; Instagram</a>
                         </div>
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover">
-                            <a className="nav-link" href="https://app.luminpdf.com/viewer/64afd90421ef979618b44e4c"><i className="bi bi-file-text"></i>&nbsp; Resume</a>
+                            <a className="nav-link" target="_blank" href="https://app.luminpdf.com/viewer/64afd90421ef979618b44e4c"><i className="bi bi-file-text"></i>&nbsp; Resume</a>
                         </div>
                     </div>
                     <h2 className="text-center text-secondary">OR</h2>
