@@ -8,7 +8,7 @@ const Contact = () => {
                 <div className="card border-secondary border-2 mb-3 container bg-transparent" id='Contact'>
                     <div className="row justifuy-content-center align-items-center text-white my-3">
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover ">
-                            <a className="nav-link" target="_blank"><i className="bi bi-whatsapp"></i>&nbsp; +923312619428</a>
+                            <a className="nav-link" target="_blank"><i className="bi bi-whatsapp"></i>&nbsp; +923151030280</a>
                         </div>
                         <div className="col-md-2 btn card-body mx-3 px-1 py-2 my-4 border border-secondary border-2 rounded-3 li-hover">
                             <a className="nav-link" target="_blank" href="https://github.com/saadkhan2211"><i className="bi bi-github"></i>&nbsp; GitHub</a>

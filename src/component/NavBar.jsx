@@ -3,6 +3,28 @@ import { Link } from "react-scroll";
 const NavBar = () => {
 
     const title = "<Saad Saifullah />"
+    const links = [
+        {
+            id: 1,
+            title: 'Home',
+        },
+        {
+            id: 2,
+            title: 'About',
+        },
+        {
+            id: 3,
+            title: 'Skills',
+        },
+        {
+            id: 4,
+            title: 'Portfolio',
+        },
+        {
+            id: 5,
+            title: 'Contact',
+        },
+    ]
 
     return(
         <div>
@@ -15,7 +37,16 @@ const NavBar = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav ms-auto me-4 mb-2 mb-lg-0 text-center">
-                                <li className="nav-item mx-2">
+                                {
+                                    links.map((link) => {
+                                        return(
+                                            <li key={link.id} className="nav-item mx-2">
+                                                <Link to={link.title} className="nav-link navFont" smooth={true} offset={-100} duration={500}>{link.title}</Link>
+                                            </li>
+                                        )
+                                    })
+                                }
+                                {/* <li className="nav-item mx-2">
                                     <Link to="Home" className="nav-link navFont" smooth={true} offset={-100} duration={500}>Home</Link>
                                 </li>
                                 <li className="nav-item mx-2">
@@ -29,7 +60,7 @@ const NavBar = () => {
                                 </li>
                                 <li className="nav-item mx-2">
                                     <Link to="Contact" className="nav-link navFont" smooth={true} offset={-120} duration={500}>Contact</Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>

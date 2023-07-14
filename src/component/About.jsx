@@ -9,7 +9,7 @@ const About = () => {
             </div>
             <div className="col-md-6">
                 <h6 className="my-4"><i className="bi bi-circle-fill" style={{color: "#3498db"}}></i>&nbsp; Experience</h6>
-                <div className="container py-2 px-3 card border-secondary border-2 bg-dark hide-scroll" style={{height:"335px"}}>
+                <div className="container py-2 px-3 card border-secondary border-2 bg-dark hide-scroll" style={{height:"290px"}}>
                     <div className="card border-secondary border-2 bg-dark text-white my-2">
                         <div className="card-body">
                             <small className="card-text">2022-Present</small>
