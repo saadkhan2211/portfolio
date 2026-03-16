@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #6c63ff;
+  --accent2: #a855f7;
+  --red: #ff2d55;
+  --gold: #c9a84c;
+  --bg: #04050d;
+  --surface: #080c18;
+  --surface2: #0d1126;
+  --border: #1a2040;
+  --border2: #2a3060;
+  --text: #c8d6f0;
+  --muted: #4a5580;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--red);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.08s ease;
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(108, 99, 255, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition:
+    width 0.2s,
+    height 0.2s,
+    opacity 0.2s;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+.rune-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.rune-card::before,
+.rune-card::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--accent);
+  border-style: solid;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.rune-card::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+.rune-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.rune-card .rc-tr {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--red);
+  border-bottom: none;
+  border-left: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.rune-card .rc-bl {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--red);
+  border-top: none;
+  border-right: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  font-family: "Share Tech Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  background: rgba(108, 99, 255, 0.06);
+  letter-spacing: 0.04em;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+
+.glow-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    var(--red),
+    transparent
+  );
+  height: 1px;
+  opacity: 0.2;
+}
+
+.section-content {
+  position: relative;
+  z-index: 1;
+}
+
+.canvas-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gold {
+  background: linear-gradient(135deg, #c9a84c 0%, #f5d98b 60%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.5;
+}
+
+@keyframes scanline {
+  0% {
+    top: -2px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+.scanline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(108, 99, 255, 0.12),
+    transparent
+  );
+  pointer-events: none;
+  z-index: 9996;
+  animation: scanline 10s linear infinite;
+}
+
+@keyframes runePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    text-shadow: 0 0 8px var(--accent);
+  }
+  50% {
+    opacity: 0.9;
+    text-shadow:
+      0 0 20px var(--accent),
+      0 0 40px var(--accent2);
+  }
+}
+.rune-pulse {
+  animation: runePulse 3s ease-in-out infinite;
+}
+
+@keyframes portalGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 30px rgba(108, 99, 255, 0.2),
+      inset 0 0 30px rgba(108, 99, 255, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 60px rgba(168, 85, 247, 0.35),
+      inset 0 0 60px rgba(168, 85, 247, 0.1);
+  }
+}
+.portal-glow {
+  animation: portalGlow 4s ease-in-out infinite;
+}
+
+.stat-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+.power-bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+.power-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 8px var(--accent);
+  position: relative;
+  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.power-bar-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: white;
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+.system-window {
+  background: rgba(8, 12, 24, 0.92);
+  border: 1px solid var(--border2);
+  backdrop-filter: blur(12px);
+}
