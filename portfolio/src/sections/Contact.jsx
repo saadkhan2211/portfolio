@@ -51,7 +51,7 @@ export default function Contact() {
           >
             <p className="font-body text-base text-muted leading-relaxed mb-10">
               Whether you have a project in mind, an opportunity to explore, or
-              just want to talk tech — my inbox is always open. I'll get back to
+              just want to talk tech my inbox is always open. I'll get back to
               you within 24 hours.
             </p>
 

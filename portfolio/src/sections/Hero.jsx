@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import avatar from "../assets/avatar.jpg";
 
 const roles = [
   "Full Stack Developer",
@@ -215,14 +216,11 @@ export default function Hero() {
 
               <div className="p-7">
                 <div className="flex items-center gap-4 mb-7">
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center font-display font-black text-xl text-white"
-                    style={{
-                      background: "linear-gradient(135deg,#6035F2,#8B5CF6)",
-                    }}
-                  >
-                    SS
-                  </div>
+                  <img
+                    src={avatar}
+                    className="w-14 h-14 rounded-xl object-cover"
+                    alt="Saad Saifullah"
+                  />
                   <div>
                     <div className="font-display font-bold text-lg text-text">
                       Saad Saifullah

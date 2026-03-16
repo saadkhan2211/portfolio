@@ -30,7 +30,7 @@ export default function App() {
           transition={{ duration: 0.45 }}
           className="font-display font-black text-4xl text-gradient"
         >
-          Saad.
+          {"saad.dev()"}
         </motion.div>
         <motion.div
           initial={{ width: 0 }}
