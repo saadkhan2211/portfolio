@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6035f2;
+  --primary2: #8b5cf6;
+  --glow: #4f28e0;
+  --cyan: #06b6d4;
+  --rose: #f43f5e;
+  --amber: #f59e0b;
+  --bg: #08080f;
+  --surface: #0e0e1a;
+  --surface2: #13131f;
+  --border: #1c1c2e;
+  --border2: #2a2a45;
+  --text: #e2e4f0;
+  --textDim: #9898b8;
+  --muted: #5a5a7a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── Cursor ── */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid rgba(96, 53, 242, 0.55);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition:
+    width 0.18s,
+    height 0.18s,
+    opacity 0.18s,
+    border-color 0.18s;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* ── Canvas wrapper ── */
+.canvas-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Section ── */
+.section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.card:hover {
+  border-color: rgba(96, 53, 242, 0.4);
+  box-shadow: 0 0 28px rgba(96, 53, 242, 0.08);
+}
+
+/* ── Tech tag ── */
+.tech-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid rgba(96, 53, 242, 0.3);
+  border-radius: 4px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  color: var(--primary2);
+  background: rgba(96, 53, 242, 0.07);
+  letter-spacing: 0.02em;
+}
+
+/* ── Gradient text ── */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary2) 60%,
+    var(--cyan) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-warm {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow divider ── */
+.glow-line {
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  height: 1px;
+  opacity: 0.2;
+}
+
+/* ── Noise overlay ── */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.45;
+}
+
+/* ── Scanline ── */
+@keyframes scanline {
+  0% {
+    top: -2px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+.scanline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(96, 53, 242, 0.025),
+    transparent
+  );
+  pointer-events: none;
+  z-index: 9996;
+  animation: scanline 12s linear infinite;
+}
+
+/* ── Power bar ── */
+.power-bar-track {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.power-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  box-shadow: 0 0 8px rgba(96, 53, 242, 0.6);
+}
+.power-bar-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: white;
+  filter: blur(1.5px);
+  opacity: 0.7;
+}
+
+/* ── Number badge ── */
+.rank-badge {
+  font-family: "Gabarito", sans-serif;
+  font-weight: 700;
+}
+
+/* ── Stat window ── */
+.stat-window {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+}
+
+/* ── Button primary ── */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+.btn-primary:hover {
+  background: #7045f8;
+  box-shadow: 0 0 28px rgba(96, 53, 242, 0.45);
+}
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--border2);
+  color: var(--textDim);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary2);
+}
+
+/* ── Input ── */
+.sl-input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.sl-input:focus {
+  border-color: rgba(96, 53, 242, 0.6);
+  box-shadow: 0 0 0 3px rgba(96, 53, 242, 0.1);
+}
+.sl-input::placeholder {
+  color: var(--muted);
+}
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
